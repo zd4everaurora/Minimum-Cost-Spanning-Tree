@@ -1,0 +1,27 @@
+1.Compile the file
+There is only one file mst.java. 
+In Terminal of Unix/Linux/Windows, just simply running ¡°javac mst.java¡±, followed by the command, i.e.¡°java mst ¨Cr 1000 10¡±. Please use jdk 1.7 and make environment variables ready.
+Also, if the default java heap size is not enough, please increase the size by using the command like ¡°java -Xmx4g mst -r 5000 50¡±
+
+2.Structure description
+The structure is simple as it is an independent project. In the mst class, there are some member values that from input and 5 inner classes used to process. As the picture shows below:
+ 
+a. Member values
+mode: Input as ¡°-r¡±, for the random mode, ¡°-s¡±, for the user input mode with simple schema, ¡°-f¡±, for the user input mode with Fibonacci schema.
+numVertex: Input for the number of vertex when in the random mode.
+density: Input for the density of the graph when in the random mode.
+filename: Input for the file name when in user input mode.
+MAXINT: Used for initialize the key of the vertex.
+
+b. Member functions
+main(): The beginning of the program.
+parseInput(): Parse the input and forward it to the right mode.
+readFromFile(): If the mode is user input, this method is invoked to read the contents from the file.
+process(): Start to process the mode.
+
+c. Nested classes:
+Graph: The inner class Graph is used to generate a graph from user's input or from given number of vertex and density. Using this class to generate the graph, one can get a graph that not too much uniformity, say, the degree of a node can be varies a lot. See details in createGraph().
+Node: The general node represents the vertex with id, key and parent.
+FibonacciNode: The Fibonacci node that is used in Fibonacci schema, with double linked list, as well as inner Node class.
+Simple: The simple class is used for generating Minimum spanning tree with simple schema.
+Fibonacci: The Fibonacci class is used for generating Minimum spanning tree with Fibonacci schema.
